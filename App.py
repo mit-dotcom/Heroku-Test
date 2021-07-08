@@ -13,7 +13,7 @@ import pickle
 import logging
 
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
+model = pd.read_pickle('model.pkl')
 
 @app.route('/')
 def home():
