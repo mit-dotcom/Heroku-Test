@@ -29,12 +29,12 @@ def predict():
     days = [y for y in request.form.values()]
     day = int(days[0])
                                                                         
-    y_hat = pd.DataFrame(model.predict(start=4433,end=4433+day))
+    y_hat = pd.DataFrame(model.predict(start=4433,end=4433+day-1))
     pred = y_hat.to_html()
     text_file = open("templates/pred.html", "w")
     text_file.write(pred)
     text_file.close()
-    return render_template('pred.html')
+    return render_template('forecast1.html', output='Forecast for next {} dayss {}'.format(day,y_hat))
     
 if __name__ == "__main__":
     app.run(debug=False)
