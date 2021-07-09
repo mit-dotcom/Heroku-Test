@@ -28,9 +28,9 @@ def predict():
 
     days = [y for y in request.form.values()]
     day = int(days[0])
-    hour = 24 * (day-1)
+    hour = 24 * (day)
                                                                         
-    y_hat = pd.DataFrame(model.predict(start=4433,end=4433+hour))
+    y_hat = pd.DataFrame(model.predict(start=4433,end=4433+hour-1))
     y_hat = (y_hat).to_string(index=False)
     #pred = y_hat.to_html()
     #text_file = open("templates/pred.html", "w")
