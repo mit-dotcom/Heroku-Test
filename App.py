@@ -34,7 +34,7 @@ def predict():
     text_file = open("templates/pred.html", "w")
     text_file.write(pred)
     text_file.close()
-    return render_template('forecast1.html', output='Forecast for next {} dayss {}'.format(day,y_hat))
+    return render_template('forecast1.html', output='Forecast for next {} hours {}'.format(day,y_hat))
     
 if __name__ == "__main__":
     app.run(debug=False)
