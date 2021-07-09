@@ -32,10 +32,10 @@ def predict():
                                                                         
     y_hat = pd.DataFrame(model.predict(start=4433,end=4433+hour))
     y_hat = (y_hat).to_string(index=False)
-    pred = y_hat.to_html()
-    text_file = open("templates/pred.html", "w")
-    text_file.write(pred)
-    text_file.close()
+    #pred = y_hat.to_html()
+    #text_file = open("templates/pred.html", "w")
+    #text_file.write(pred)
+    #text_file.close()
     return render_template('forecast1.html', output='Forecast for next {} days {}'.format(day,y_hat))
     
 if __name__ == "__main__":
